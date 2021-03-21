@@ -81,7 +81,7 @@ def run():
     # # usando filter() and map()
     # adults = list(filter(lambda worker: worker['age'] > 17, DATA))
     # adults = list(map(lambda worker: worker['name'], adults))
-    old_people = list(map(lambda worker: worker | {'old': worker['age'] > 70}, DATA)) # el | sirve para sumar diccionarios
+    # old_people = list(map(lambda worker: worker | {'old': worker['age'] > 70}, DATA)) # el | sirve para sumar diccionarios
 
     #RETO inverso
     #filter() and map()
@@ -89,7 +89,12 @@ def run():
     all_python_devs = list(map(lambda worker: worker['name'], all_python_devs))
 
     all_Platzi_workers = list(filter(lambda worker: worker['organization'] == 'Platzi', DATA))
-    # all_Platzi_workers = list(map(lambda worker: , all_Platzi_workers))
+    all_Platzi_workers = list(map(lambda worker: worker['name'], all_Platzi_workers))
+
+    #list comprehensions
+    adults = [worker['name'] for worker in DATA if worker['age'] > 17]
+
+    old_people = [worker | {'old': worker['age'] > 70} for worker in DATA]
 
     for worker in old_people:
         print(worker)
