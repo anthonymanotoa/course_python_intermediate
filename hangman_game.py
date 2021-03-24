@@ -31,32 +31,23 @@ def game(magic_word, letter, game_word):
 
     return ' '.join(game_word)
 
-# def ahorcado(letter):
-#     magic_word = read_words()
-#     game_word = ['_' for i in range(len(magic_word) - 1)]
-#     for i in range(20):
-#         if game_word.count('_') > 0:
-#             os.system('cls')
-#             print('¡Adivina la palabra!')
-#             print(game(magic_word, letter, game_word))
-#             letter = input('Escoge una letra: ').lower()
-#         else:
-#             print('ganaste')
-#             break
 
 def run():
     letter = ''
-    # ahorcado(letter)
     magic_word = read_words()
     game_word = ['_' for i in range(len(magic_word) - 1)]
-    for i in range(20):
-        if game_word.count('_') > 0:
+    for i in range(50):
+        if game(magic_word, letter, game_word).count('_') > 0:
             os.system('cls')
             print('¡Adivina la palabra!')
+            print(game_word.count('_'))
             print(game(magic_word, letter, game_word))
             letter = input('Escoge una letra: ').lower()
         else:
-            print('ganaste')
+            os.system('cls')
+            print('¡Adivina la palabra!')
+            print(game(magic_word, letter, game_word))
+            print('¡Ganaste! √')
             break
     
 
