@@ -23,29 +23,42 @@ def read_words():
     return word
 
 
-def ahorcado(letter):
-    magic_word = read_words()
+def game(magic_word, letter, game_word):
     if letter in magic_word:
         for i in range(len(magic_word)):
             if letter == magic_word[i]:
-                print(letter, end=' ')
-            else:
-                print('_', end=' ')
-    else:
-        for _ in magic_word:
-            print('_', end=' ')
+                game_word[i] = letter
 
+    return ' '.join(game_word)
+
+# def ahorcado(letter):
+#     magic_word = read_words()
+#     game_word = ['_' for i in range(len(magic_word) - 1)]
+#     for i in range(20):
+#         if game_word.count('_') > 0:
+#             os.system('cls')
+#             print('¡Adivina la palabra!')
+#             print(game(magic_word, letter, game_word))
+#             letter = input('Escoge una letra: ').lower()
+#         else:
+#             print('ganaste')
+#             break
 
 def run():
     letter = ''
-    count = 0
-    while count < 10:
-        os.system('cls')
-        print('¡Adivina la palabra!')
-        print(ahorcado(letter))
-        letter = input('Escoge una letra: ').lower()
-        count += 1
-
+    # ahorcado(letter)
+    magic_word = read_words()
+    game_word = ['_' for i in range(len(magic_word) - 1)]
+    for i in range(20):
+        if game_word.count('_') > 0:
+            os.system('cls')
+            print('¡Adivina la palabra!')
+            print(game(magic_word, letter, game_word))
+            letter = input('Escoge una letra: ').lower()
+        else:
+            print('ganaste')
+            break
+    
 
 if __name__ == '__main__':
     run()
