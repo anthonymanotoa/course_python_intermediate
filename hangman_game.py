@@ -32,17 +32,36 @@ def game(magic_word, letter, game_word):
     return ' '.join(game_word)
 
 
+def game_print(magic_word, letter, game_word):
+    pass #podrias poner parametros boleanos para saber si estas continuando el jeugo o si ya se acabo
+
+
 def run():
+    lives = 5
     letter = ''
     magic_word = read_words()
     game_word = ['_' for i in range(len(magic_word) - 1)]
-    for i in range(50):
+
+    while lives > 0:
         if game(magic_word, letter, game_word).count('_') > 0:
-            os.system('cls')
-            print('¡Adivina la palabra!')
-            print(game_word.count('_'))
-            print(game(magic_word, letter, game_word))
-            letter = input('Escoge una letra: ').lower()
+            if letter in game(magic_word, letter, game_word):
+                os.system('cls')
+                print(f'Vidas restantes: {"❤" * (lives)}')
+                print('¡Adivina la palabra!')
+                print(game(magic_word, letter, game_word))
+                letter = input('Escoge una letra: ').lower()
+            else:
+                lives -= 1
+                if lives > 0:
+                    os.system('cls')
+                    print(f'Vidas restantes: {"❤" * (lives)}')
+                    print('¡Adivina la palabra!')
+                    print(game(magic_word, letter, game_word))
+                    letter = input('Escoge una letra: ').lower()
+                else:
+                    os.system('cls')
+                    print('¡Te quedaste sin vidas!\nJuego terminado...\n')
+                    print('La palabra era: ' + magic_word)
         else:
             os.system('cls')
             print('¡Adivina la palabra!')
