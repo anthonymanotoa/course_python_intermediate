@@ -1,4 +1,3 @@
-# Incorpora list o dic comprehensions, manejo de errores, manejo de archivos
 # Investiga la función enumerate (documentacion)
 # El método get de los diccionarios te puede servir
 # Dibuja el ahorcado con el codigo ascii y dibujar en pantalla
@@ -8,13 +7,13 @@ import os
 import random
 
 
-def read_words():
+def read_words(filepath='./words.txt'):
 
-    with open('./words.txt', 'r', encoding='utf-8') as f:
-        list_words = [i for i in f]
-        word = list_words[random.randint(0, len(list_words))]
+    with open(filepath, 'r', encoding='utf-8') as f:
+        list_words = [word.strip().upper() for word in f] # el strip() quita ese espacio final
+        choosen_word = list_words[random.randint(0, len(list_words))]
 
-    return word
+    return choosen_word
 
 
 def game(magic_word, letter, game_word):
@@ -28,22 +27,22 @@ def game(magic_word, letter, game_word):
 
 def run():
     lives = 5
-    letter = ' '
+    letter = ''
     magic_word = read_words()
-    game_word = ['_' for i in range(len(magic_word) - 1)]
+    game_word = ['_' for i in range(len(magic_word))]
 
     while lives > 0:
+        os.system('cls')
+        print(f'Vidas restantes: {"❤" * (lives)}')
+        print('¡Adivina la palabra!')
+        print(game(magic_word, letter, game_word))
         try:
             if len(letter) > 1:
                 raise ValueError('Solo puedes ingresar una letra')
             else:
                 if game(magic_word, letter, game_word).count('_') > 0:
                     if letter in game(magic_word, letter, game_word):
-                        os.system('cls')
-                        print(f'Vidas restantes: {"❤" * (lives)}')
-                        print('¡Adivina la palabra!')
-                        print(game(magic_word, letter, game_word))
-                        letter = input('Escoge una letra: ').lower()
+                        letter = input('Escoge una letra: ').upper()
                     else:
                         lives -= 1
                         if lives > 0:
@@ -51,15 +50,12 @@ def run():
                             print(f'Vidas restantes: {"❤" * (lives)}')
                             print('¡Adivina la palabra!')
                             print(game(magic_word, letter, game_word))
-                            letter = input('Escoge una letra: ').lower()
+                            letter = input('Escoge una letra: ').upper()
                         else:
                             os.system('cls')
                             print('¡Te quedaste sin vidas!\nJuego terminado...\n')
                             print('La palabra era: ' + magic_word)
                 else:
-                    os.system('cls')
-                    print('¡Adivina la palabra!')
-                    print(game(magic_word, letter, game_word))
                     print('¡Ganaste! √')
                     break
 
