@@ -1,8 +1,3 @@
-# Investiga la función enumerate (documentacion)
-# El método get de los diccionarios te puede servir
-# Dibuja el ahorcado con el codigo ascii y dibujar en pantalla
-# Mejora la interfaz, emojis
-
 import os
 import random
 
@@ -65,3 +60,10 @@ def run():
 
 if __name__ == '__main__':
     run()
+
+
+# Notas finales por revisar:
+# Investiga la función enumerate (documentacion)
+# El método get de los diccionarios te puede servir
+# Dibuja el ahorcado con el codigo ascii y dibujar en pantalla
+# Mejora la interfaz, emojis
