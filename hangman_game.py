@@ -62,7 +62,7 @@ if __name__ == '__main__':
     run()
 
 
-# Notas finales por revisar:
+# Notas finales para mejorar o modificar el juego:
 # Investiga la función enumerate (documentacion)
 # El método get de los diccionarios te puede servir
 # Dibuja el ahorcado con el codigo ascii y dibujar en pantalla
