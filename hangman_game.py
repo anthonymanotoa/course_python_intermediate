@@ -66,4 +66,4 @@ if __name__ == '__main__':
 # Investiga la función enumerate (documentacion)
 # El método get de los diccionarios te puede servir
 # Dibuja el ahorcado con el codigo ascii y dibujar en pantalla
-# Mejora la interfaz, emojis
+# Mejora la interfaz con emojis

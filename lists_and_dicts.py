@@ -7,7 +7,7 @@ def run():
         {'fistname': 'Angie', 'lastname': 'Paladines'},
         {'fistname': 'Max', 'lastname': 'Medina'},
         {'fistname': 'Jandry', 'lastname': 'Camacho'},
-        {'fistname': 'David', 'lastname': 'Beckam'}
+        {'fistname': 'David', 'lastname': 'Pardo'}
     ]
 
     super_dic = {

@@ -7,7 +7,7 @@ def run():
     num = input('Ingresa un número: ')
     # assert int(num) <= 0, 'Debe ser un numero positivo'
     # isnumerio() es un metodo de las str que devuelve True si es 'numero' y False si no
-    assert num.isnumeric(), 'Debes ingresar un numero'
+    assert num.isnumeric(), 'Debes ingresar un número'
 
     print(divisors(int(num)))
     print('Termino mi programa')

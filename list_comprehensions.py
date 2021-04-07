@@ -1,6 +1,5 @@
 # lista de los primeros 100 numeros naturales al cuadrado mientas no sean divisibles para 3
 
-
 def run():
     # natural_numbers = []
     # for i in range(1, 101):

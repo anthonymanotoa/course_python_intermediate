@@ -1,4 +1,4 @@
-# una constante (es decir, que no se modificará) por lo que va por encima de la función run()
+# escribir en MAYÚSCULAS significa una constante (es decir, que no se modificará) por lo que va por encima de la función run()
 DATA = [
     {
         'name': 'Facundo',

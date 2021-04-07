@@ -1,4 +1,4 @@
-# course_python_intermediate
+# Curso Intermedio de Python
 Todos los ejercicicios del curso de Python. Pero lo más importante es el juego del ahorcado, es el archivo llamado hangman_game.py
 
 Aquí están las notas del curso en Notion:

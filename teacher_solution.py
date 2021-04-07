@@ -43,6 +43,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-
-# ¿Viendo la solución? No hay drama crack
-# Python es mejor que JavaScript

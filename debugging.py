@@ -15,7 +15,7 @@ def run():
         print(divisors(num))
         print('Termino mi programa')
     except ValueError:
-        print('Debes ingresar un numero')
+        print('Debes ingresar un numero :c')
     
 
 if __name__ == '__main__':
